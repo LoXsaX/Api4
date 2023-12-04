@@ -3,7 +3,7 @@ import os
 from uploade_url import uploade_url
 
 
-def request_api_SpaceX():
+def get_url_photo_SpaceX():
     url = "https://api.spacexdata.com/v5/launches/"
     data = requests.get(url)
     response = data.json()
@@ -21,7 +21,7 @@ def fetch_spacex_last_launch(url_photo, folder_names):
 
 
 def main():
-    request_api_SpaceX()
+    get_url_photo_SpaceX()
 
 
 if __name__ == '__main__':
