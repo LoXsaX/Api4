@@ -5,9 +5,8 @@ from uploade_url import uploade_url
 
 def get_url_photo_SpaceX():
     url = "https://api.spacexdata.com/v5/launches/"
-    data = requests.get(url)
-    response = data.json()
-    for link_photo_SpaceX in response:
+    response = requests.get(url)
+    for link_photo_SpaceX in response.json():
         if link_photo_SpaceX["links"]["flickr"]["original"]:
             url_photo = link_photo_SpaceX["links"]["flickr"]["original"]
     return url_photo
