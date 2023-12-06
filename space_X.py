@@ -8,12 +8,12 @@ def get_url_photo_spacex():
     response = requests.get(url)
     for link_photo_spacex in response.json():
         if link_photo_spacex["links"]["flickr"]["original"]:
-            photo_url = link_photo_spacex["links"]["flickr"]["original"]
-    return url_photo
+            photos_url = link_photo_spacex["links"]["flickr"]["original"]
+    return photos_url
 
 
-def fetch_spacex_last_launch(url_photo, folder_names):
-    for number, link in enumerate(url_photo):
+def fetch_spacex_last_launch(photos_url, folder_names):
+    for number, link in enumerate(photos_url):
         filename = f'spacex{number}.jpg'
         path = os.path.join(folder_names, filename)
         uploade_url(link, path)
