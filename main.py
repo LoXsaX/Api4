@@ -12,7 +12,7 @@ import random
 from dotenv import load_dotenv
 
 
-def loading_auto(tg_token):
+def loading_auto(tg_token, chat_id):
     bot = telegram.Bot(token=tg_token)
     folder = 'images'
     files = listdir(folder)
@@ -20,7 +20,7 @@ def loading_auto(tg_token):
     for file in files:
         file_path = os.path.join(folder, file)
         with open(file_path, 'rb') as f:
-            bot.send_document(chat_id="@SpaceTGchannel", document=f)
+            bot.send_document(chat_id, document=f)
         sleep(10)
 
 
@@ -28,6 +28,7 @@ def main():
     load_dotenv()
     nasa_key = os.environ['NASA_KEY']
     tg_token = os.environ['TG_TOKEN']
+    chat_id = os.environ['TG_CHANNLE_ID']
     folder_names = 'images'
     Path(folder_names).mkdir(parents=True, exist_ok=True)
     url_photo = request_api_SpaceX()
