@@ -8,7 +8,7 @@ def get_url_photo_spacex():
     response = requests.get(url)
     for link_photo_spacex in response.json():
         if link_photo_spacex["links"]["flickr"]["original"]:
-            url_photo = link_photo_spacex["links"]["flickr"]["original"]
+            photo_url = link_photo_spacex["links"]["flickr"]["original"]
     return url_photo
 
 
