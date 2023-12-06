@@ -12,7 +12,7 @@ import random
 from dotenv import load_dotenv
 
 
-def auto_loading(tg_token):
+def loading_auto(tg_token):
     bot = telegram.Bot(token=tg_token)
     folder = 'images'
     files = listdir(folder)
@@ -34,7 +34,7 @@ def main():
     get_epic_photo(folder_names, nasa_key)
     fetch_NASA_apod(folder_names, nasa_key)
     fetch_spacex_last_launch(url_photo, folder_names)
-    auto_loading(tg_token)
+    loading_auto(tg_token)
 
 
 if __name__ == '__main__':
