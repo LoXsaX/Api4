@@ -17,9 +17,6 @@ def get_epic_photo(folder_names, api_key):
         epic_link = f'https://api.nasa.gov/EPIC/archive/natural//{epic_time}/png/{epic_name}.png'
         path = os.path.join(folder_names, f'{epic_name}.png')
         uploade_url(epic_link, path, params)
-
-
-def main():
     load_dotenv()
     api_key = os.environ['NASA_KEY']
     folder_names = 'images'
