@@ -13,12 +13,13 @@ def upload_auto(tg_token, chat_id):
     bot = telegram.Bot(token=tg_token)
     folder = 'images'
     files = listdir(folder)
+    sleep = 14400
     random.shuffle(files)
     for file in files:
         file_path = os.path.join(folder, file)
         with open(file_path, 'rb') as f:
             bot.send_document(chat_id, document=f)
-        sleep(14400)
+        sleep
 
 
 def main():
