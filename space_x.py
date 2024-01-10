@@ -3,7 +3,7 @@ import os
 from uploade_url import uploade_url
 
 
-def get_url_photo_spacex(photos_url, folder_names):
+def get_url_photo_spacex(folder_names):
     url = "https://api.spacexdata.com/v5/launches/"
     response = requests.get(url)
     for link_photo_spacex in response.json():
@@ -16,7 +16,8 @@ def get_url_photo_spacex(photos_url, folder_names):
 
 
 def main():
-    get_url_photo_spacex()
+    folder_names = 'images'
+    get_url_photo_spacex(folder_names)
 
 
 if __name__ == '__main__':
