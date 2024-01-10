@@ -9,7 +9,7 @@ import random
 from dotenv import load_dotenv
 
 
-def loading_auto(tg_token, chat_id):
+def upload_auto(tg_token, chat_id):
     bot = telegram.Bot(token=tg_token)
     folder = 'images'
     files = listdir(folder)
@@ -27,7 +27,7 @@ def main():
     chat_id= os.environ['CHAT_ID']
     folder_names = 'images'
     Path(folder_names).mkdir(parents=True, exist_ok=True)
-    loading_auto(tg_token, chat_id)
+    upload_auto(tg_token, chat_id)
 
 
 if __name__ == '__main__':
