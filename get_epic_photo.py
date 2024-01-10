@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 
 def get_epic_photo(folder_names, api_key):
     url = "https://api.nasa.gov/EPIC/api/natural/image"
-    params = {'api_key': api_key, 'count': 5}
+    count = 5
+    params = {'api_key': api_key, 'count': count}
     response = requests.get(url, params=params)
     response.raise_for_status()
     for image_epic in response.json():
