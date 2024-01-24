@@ -15,8 +15,9 @@ def get_filename(link):
 
 
 def fetch_nasa_apod(folder_name, api_key):
+    count = 5
     url = "https://api.nasa.gov/planetary/apod"
-    params = {'api_key': api_key, 'count': 5}
+    params = {'api_key': api_key, 'count': count}
     response = requests.get(url, params=params)
     response.raise_for_status()
     for image_apod in response.json():
