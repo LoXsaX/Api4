@@ -14,7 +14,7 @@ def get_filename(link):
     return extention, filename
 
 
-def fetch_nasa_apod(folder_names, api_key):
+def fetch_nasa_apod(folder_name, api_key):
     url = "https://api.nasa.gov/planetary/apod"
     params = {'api_key': api_key, 'count': 5}
     response = requests.get(url, params=params)
@@ -33,7 +33,7 @@ def fetch_nasa_apod(folder_names, api_key):
 def main():
     load_dotenv()
     api_key = os.environ['NASA_KEY']
-    folder_names = 'images'
+    folder_name = 'images'
     fetch_nasa_apod(folder_names, api_key)
 
 
