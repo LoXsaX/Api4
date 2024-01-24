@@ -25,7 +25,7 @@ def upload_auto(tg_token, chat_id):
 def main():
     load_dotenv()
     tg_token = os.environ['TG_TOKEN']
-    chat_id= os.environ['CHAT_ID']
+    chat_id= os.environ['TG_CHAT_ID']
     folder_name = 'images'
     Path(folder_name).mkdir(parents=True, exist_ok=True)
     upload_auto(tg_token, chat_id)
