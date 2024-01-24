@@ -19,7 +19,7 @@ def upload_auto(tg_token, chat_id):
         file_path = os.path.join(folder, file)
         with open(file_path, 'rb') as f:
             bot.send_document(chat_id, document=f)
-        sleep
+        sleep(sleep)
 
 
 def main():
