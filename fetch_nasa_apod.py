@@ -22,10 +22,7 @@ def fetch_nasa_apod(folder_name, api_key):
     response.raise_for_status()
     for image_apod in response.json():
         if image_apod.get('media_type') == 'image':
-            if image_apod.get('hdurl'):
-                link_image_apod = image_apod['hdurl']
-            else:
-                link_image_apod = image_apod['url']
+            link_image_apod = image_apod.get('hdurl') or image_apod.get('url')
             extention, filename = get_filename(link_image_apod)
             path = os.path.join(folder_name, f'{filename}{extention}')
             uploade_url(link_image_apod, path)
