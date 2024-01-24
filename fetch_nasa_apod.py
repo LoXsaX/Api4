@@ -26,7 +26,7 @@ def fetch_nasa_apod(folder_name, api_key):
             else:
                 apod_link_image = image_apod['url']
             extention, filename = get_filename(apod_link_image)
-            path = os.path.join(folder_names, f'{filename}{extention}')
+            path = os.path.join(folder_name, f'{filename}{extention}')
             uploade_url(apod_link_image, path)
 
 
@@ -34,7 +34,7 @@ def main():
     load_dotenv()
     api_key = os.environ['NASA_KEY']
     folder_name = 'images'
-    fetch_nasa_apod(folder_names, api_key)
+    fetch_nasa_apod(folder_name, api_key)
 
 
 if __name__ == '__main__':
