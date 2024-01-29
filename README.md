@@ -31,4 +31,6 @@
 
 `TG_TOKEN = 'tg_token'`
 
+`TG_CHAT_ID = 'chat_id'` 
+
 Получить токен `NASA_KEY` можно на сайте [NASA](https://api.nasa.gov/#epic). Получить токен `TG_TOKEN` можно у отца ботов.
