@@ -1,6 +1,6 @@
 import requests
 
-def uploade_url(url, path, params=None):
+def upload_url(url, path, params=None):
     response = requests.get(url, params)
     response.raise_for_status()
     
