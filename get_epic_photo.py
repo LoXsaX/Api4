@@ -1,6 +1,6 @@
 import requests
 import os
-from uploade_url import uploade_url
+from upload_url import upload_url
 import datetime
 from dotenv import load_dotenv
 
@@ -18,7 +18,7 @@ def get_epic_photos(folder_name, api_key):
             "%Y/%m/%d")
         epic_link = f'https://api.nasa.gov/EPIC/archive/natural//{epic_time}/png/{epic_name}.png'
         path = os.path.join(folder_name, f'{epic_name}.png')
-        uploade_url(epic_link, path, params)
+        upload_url(epic_link, path, params)
 
 
 def main():
