@@ -1,6 +1,6 @@
 import requests
 import os
-from uploade_url import uploade_url
+from upload_url import upload_url
 
 
 def get_url_photo_spacex(folder_name):
@@ -13,7 +13,7 @@ def get_url_photo_spacex(folder_name):
     for number, link in enumerate(photo_urls):
         filename = f'spacex{number}.jpg'
         path = os.path.join(folder_name, filename)
-        uploade_url(link, path)
+        upload_url(link, path)
 
 
 def main():
